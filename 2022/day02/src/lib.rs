@@ -2,10 +2,12 @@ pub fn puzzle1(input: &str) -> String {
     total_score(input, knows_move_strategy).to_string()
 }
 
-fn total_score <'a, F> (input: &str, strategy_parser: F) -> u32 
-    where F: FnMut((&str, &str)) -> u32
+fn total_score<'a, F>(input: &str, strategy_parser: F) -> u32
+where
+    F: FnMut((&str, &str)) -> u32,
 {
-    input.lines()
+    input
+        .lines()
         //.filter(|line| *line != "")
         .map(|line| line.split_once(" ").unwrap())
         .map(strategy_parser)
@@ -46,12 +48,10 @@ fn knows_result_strategy(strategy: (&str, &str)) -> u32 {
     }
 }
 
-
-
 #[cfg(test)]
 mod tests {
     use super::*;
-    
+
     const INPUT: &str = "A Y
 B X
 C Z
@@ -61,7 +61,7 @@ C Z
     fn puzzle1_works() {
         assert_eq!(puzzle1(INPUT), "15");
     }
-    
+
     #[test]
     fn puzzle2_works() {
         assert_eq!(puzzle2(INPUT), "12");
