@@ -1,7 +1,8 @@
-use day01::process_part2;
-use std::fs;
+use day01::part1;
+use day01::part2;
 
 fn main() {
-    let input = fs::read_to_string("2022/day01/input.txt").unwrap();
-    println!("{}", process_part2(&input));
+    let input = include_str!("../input.txt");
+    println!("Result of part 1 {}", part1::process(&input));
+    println!("Result of part 2 {}", part2::process(&input));
 }

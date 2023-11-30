@@ -1,11 +1,7 @@
 [workspace]
+solver = "2"
 
-members = [
-  "day-template",
-  "2022/day01",
-  "2022/day02",
-  "2022/day03",
-  "2022/day04",
-  "2022/day05",
-  "2022/day06",
-]
+members = ["day-template", "2022/day*"]
+
+[workspace.dependencies]
+nom = "7.1.3"

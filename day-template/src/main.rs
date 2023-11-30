@@ -1,8 +1,8 @@
-use day_template::{puzzle1, puzzle2};
-use std::fs;
+use day_template::part1;
+use day_template::part2;
 
 fn main() {
-    let input = fs::read_to_string("YYYY/dayDD/input.txt").unwrap();
-    println!("Puzzle 1 result: {}", puzzle1(&input));
-    println!("Puzzle 2 result: {}", puzzle2(&input));
+    let input = include_str!("../input.txt");
+    println!("Result of part 2 {}", part1::process(&input));
+    println!("Result of part 2 {}", part2::process(&input));
 }
